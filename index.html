@@ -1,15 +1,799 @@
 <!doctype html>
-<html>
+<html lang="en" class="scroll-smooth">
   <head>
     <title>Shopsy</title>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome StyleSheet -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- Font Awesome  Script-->
+    <script src="./js/all.min.js" defer></script>
+    <!-- Swiper StyleSheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <!-- Swiper Script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"
+      defer
+    ></script>
+    <!-- Tailwind Utilities -->
+    <style type="text/tailwindcss">
+      @theme {
+        --color-main: #ffddaa;
+        --color-secondary: #ee9115;
+        --color-main-bg: #f1f4f5;
+        --color-head-text: #d2a85c;
+      }
+
+      @custom-variant dark (&:where(.dark, .dark *));
+    </style>
+    <!-- Main StyleSheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Scroll Reveal Script -->
+    <script src="https://unpkg.com/scrollreveal" defer></script>
+    <!-- Tailwind CSS Browser -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Main Script File -->
+    <script src="./js/script.js" defer></script>
   </head>
-  <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+  <body
+    class="transition-colors duration-300 dark:bg-[#101826] dark:text-white selection:bg-[#030711] selection:text-secondary dark:selection:bg-main dark:selection:text-black "
+  >
+    <!-- Start Of Header Markup -->
+    <header class="bg-main dark:bg-[#68481b] transition-colors duration-300">
+      <div
+        class="container mx-auto px-2 py-2 flex justify-between items-center"
+      >
+        <div class="logo flex items-center gap-2">
+          <a href="./index.html"
+            ><img src="./assest/img/logo.png" alt="Logo" class="size-8"
+          /></a>
+          <a href="./index.html" class="text-3xl font-bold">Shopsy</a>
+        </div>
+        <div class="flex gap-3 items-center">
+          <div class="search-bar relative">
+            <input
+              type="text"
+              name="search"
+              id=""
+              placeholder="Search"
+              class="hidden md:inline-block bg-white dark:bg-[#1f2936] w-[12rem] rounded-2xl px-3 py-1 transition-all duration-300 ease-in-out focus:outline-0 focus:w-[18rem]"
+            />
+            <span
+              class="icon text-gray-500 md:absolute md:top-1/2 md:right-0 md:-translate-1/2 cursor-pointer"
+            >
+              <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+            </span>
+          </div>
+          <div
+            class="shopping-cart order-btn bg-secondary rounded-full px-3 py-1 cursor-pointer group"
+          >
+            <span
+              class="text-white font-medium capitalize hidden group-hover:inline-block"
+              >order</span
+            >
+            <i class="fa-solid fa-cart-shopping text-white"></i>
+          </div>
+          <div class="dark-light-button">
+            <label class="switch">
+              <input id="input" type="checkbox" />
+              <div class="slider round">
+                <div class="sun-moon">
+                  <svg id="moon-dot-1" class="moon-dot" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="50"></circle>
+                  </svg>
+                  <svg id="moon-dot-2" class="moon-dot" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="50"></circle>
+                  </svg>
+                  <svg id="moon-dot-3" class="moon-dot" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="50"></circle>
+                  </svg>
+                  <svg id="light-ray-1" class="light-ray" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="50"></circle>
+                  </svg>
+                  <svg id="light-ray-2" class="light-ray" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="50"></circle>
+                  </svg>
+                  <svg id="light-ray-3" class="light-ray" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="50"></circle>
+                  </svg>
+
+                  <svg id="cloud-1" class="cloud-dark" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="50"></circle>
+                  </svg>
+                  <svg id="cloud-2" class="cloud-dark" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="50"></circle>
+                  </svg>
+                  <svg id="cloud-3" class="cloud-dark" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="50"></circle>
+                  </svg>
+                  <svg id="cloud-4" class="cloud-light" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="50"></circle>
+                  </svg>
+                  <svg id="cloud-5" class="cloud-light" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="50"></circle>
+                  </svg>
+                  <svg id="cloud-6" class="cloud-light" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="50"></circle>
+                  </svg>
+                </div>
+                <div class="stars">
+                  <svg id="star-1" class="star" viewBox="0 0 20 20">
+                    <path
+                      d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"
+                    ></path>
+                  </svg>
+                  <svg id="star-2" class="star" viewBox="0 0 20 20">
+                    <path
+                      d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"
+                    ></path>
+                  </svg>
+                  <svg id="star-3" class="star" viewBox="0 0 20 20">
+                    <path
+                      d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"
+                    ></path>
+                  </svg>
+                  <svg id="star-4" class="star" viewBox="0 0 20 20">
+                    <path
+                      d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Of Header Markup -->
+
+    <!-- Start Of Nav Markup -->
+    <nav class="">
+      <ul
+        class="hidden md:flex md:justify-center md:items-center md:gap-5 md:py-3"
+      >
+        <li
+          class="capitalize font-medium transition-all duration-300 ease-in-out hover:text-secondary"
+        >
+          <a href="#home">home</a>
+        </li>
+        <li
+          class="capitalize font-medium transition-all duration-300 ease-in-out hover:text-secondary"
+        >
+          <a href="#top-rated">top rated</a>
+        </li>
+        <li
+          class="capitalize font-medium transition-all duration-300 ease-in-out hover:text-secondary"
+        >
+          <a href="#kids-wear">kids wear</a>
+        </li>
+        <li
+          class="capitalize font-medium transition-all duration-300 ease-in-out hover:text-secondary"
+        >
+          <a href="#mens-wear">mens wear</a>
+        </li>
+        <li
+          class="capitalize font-medium transition-all duration-300 ease-in-out hover:text-secondary"
+        >
+          <a href="#womens-wear">womens wear</a>
+        </li>
+        <li
+          class="capitalize font-medium transition-all duration-300 ease-in-out hover:text-secondary"
+        >
+          <a href="#electronics">electronics</a>
+        </li>
+        <li
+          class="capitalize font-medium cursor-pointer transition-all duration-300 ease-in-out hover:text-secondary flex items-center gap-2 relative"
+          id="trending-items"
+        >
+          trending items
+          <span class="icon transition-all duration-300 ease-in-out">
+            <i class="fa-solid fa-angle-up"></i>
+          </span>
+          <ul
+            class="hidden bg-white rounded-lg p-2 capitalize absolute top-[calc(100%+0.8rem)] left-0 -translate-x-[1rem] z-10"
+            id="trending-menu"
+          >
+            <li class="text-nowrap p-2 text-black hover:bg-main rounded-lg">
+              <a href="#">trending products</a>
+            </li>
+            <li
+              class="my-2 text-nowrap p-2 text-black hover:bg-main rounded-lg"
+            >
+              <a href="#">best selling</a>
+            </li>
+            <li class="text-nowrap p-2 text-black hover:bg-main rounded-lg">
+              <a href="#">author</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <!-- End Of Nav Markup -->
+
+    <!-- Start Of Home Section Markup -->
+    <section
+      id="home"
+      class="bg-main-bg dark:bg-[#030711] dark:text-white h-[calc(100vh-3.25rem)] md:h-[calc(100vh-6.25rem)] relative overflow-hidden z-0 flex items-center justify-center"
+    >
+      <span
+        class="landing-theme hidden md:block absolute top-0 right-72 translate-x-1/2 -translate-y-1/2 size-175 rounded-2xl bg-main dark:bg-[#68481b] rotate-45 -z-1"
+      >
+      </span>
+      <div class="container mx-auto select-none pt-15 md:pt-0">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="flex-row md:flex items-center">
+                <div class="info text-center md:text-start">
+                  <h1 class="text-4xl md:text-6xl/18 font-bold mb-2 capitalize">
+                    upto 50% off on all men's wear
+                  </h1>
+                  <p class="mb-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+                    enim quisquam expedita obcaecati illo aut distinctio velit.
+                  </p>
+                  <button
+                    class="order-btn bg-secondary rounded-2xl px-3 py-1 capitalize cursor-pointer text-gray-100"
+                  >
+                    order now
+                  </button>
+                </div>
+                <img
+                  src="./assest/img/shopping.png"
+                  alt="shopping img is missing"
+                  class="mx-auto md:mx-0 w-md"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="flex-row md:flex items-center">
+                <div class="info text-center md:text-start">
+                  <h1 class="text-4xl md:text-6xl/18 font-bold mb-2 capitalize">
+                    30% off on all women's wear
+                  </h1>
+                  <p class="mb-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+                    enim quisquam expedita obcaecati illo aut distinctio velit.
+                  </p>
+                  <button
+                    class="order-btn bg-secondary rounded-2xl px-3 py-1 capitalize cursor-pointer text-gray-100"
+                  >
+                    order now
+                  </button>
+                </div>
+                <img
+                  src="./assest/img/women.png"
+                  alt="shopping img is missing"
+                  class="mx-auto md:mx-0 w-md"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="flex-row md:flex items-center">
+                <div class="info text-center md:text-start">
+                  <h1 class="text-4xl md:text-6xl/18 font-bold mb-2 capitalize">
+                    70% off on all products sale
+                  </h1>
+                  <p class="mb-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+                    enim quisquam expedita obcaecati illo aut distinctio velit.
+                  </p>
+                  <button
+                    class="order-btn bg-secondary rounded-2xl px-3 py-1 capitalize cursor-pointer text-gray-100"
+                  >
+                    order now
+                  </button>
+                </div>
+                <img
+                  src="./assest/img/sale.png"
+                  alt="shopping img is missing"
+                  class="mx-auto md:mx-0 w-md"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Of Home Section Markup -->
+
+    <!-- Start Of Top Rated Section Markup -->
+    <section id="top-rated" class="py-24">
+      <div class="section-header text-center capitalize mb-10 ">
+        <p class="text-head-text">top selling product for you</p>
+        <h2 class="font-bold text-4xl my-3">top selling products</h2>
+        <p class="text-gray-500">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. In veritatis
+          sunt delectus perferendis debitis quisquam a animi accusantium.
+        </p>
+      </div>
+      <div
+        class="container mx-auto mb-10 px-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+      >
+        <div
+          class="product-card capitalize rounded-2xl overflow-hidden shadow-xl/20 pb-5"
+        >
+          <img
+            src="./assest/img/women.png"
+            alt="women img Is missing"
+            class="w-full h-[24rem]"
+          />
+          <div class="product-info mt-4 p-3">
+            <h4 class="font-bold text-xl">women ethic</h4>
+            <span class="text-gray-500">white</span>
+            <div class="rating">
+              <div class="icon text-secondary">
+                <i class="fa-solid fa-star"></i>
+                <span class="text-black font-medium dark:text-white">5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="product-card capitalize rounded-2xl overflow-hidden shadow-xl/20 pb-5"
+        >
+          <img
+            src="./assest/img/women2.jpg"
+            alt="women img Is missing"
+            class="w-full h-[24rem]"
+          />
+          <div class="product-info mt-4 p-3">
+            <h4 class="font-bold text-xl">women western</h4>
+            <span class="text-gray-500">white</span>
+            <div class="rating">
+              <div class="icon text-secondary">
+                <i class="fa-solid fa-star"></i>
+                <span class="text-black font-medium dark:text-white">4.5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="product-card capitalize rounded-2xl overflow-hidden shadow-xl/20 pb-5"
+        >
+          <img
+            src="./assest/img/women3.jpg"
+            alt="women img Is missing"
+            class="w-full h-[24rem]"
+          />
+          <div class="product-info mt-4 p-3">
+            <h4 class="font-bold text-xl">goggles</h4>
+            <span class="text-gray-500">white</span>
+            <div class="rating">
+              <div class="icon text-secondary">
+                <i class="fa-solid fa-star"></i>
+                <span class="text-black font-medium">4.7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="product-card capitalize rounded-2xl overflow-hidden shadow-xl/20 pb-5"
+        >
+          <img
+            src="./assest/img/women4.jpg"
+            alt="women img Is missing"
+            class="w-full h-[24rem]"
+          />
+          <div class="product-info mt-4 p-3">
+            <h4 class="font-bold text-xl">printed shirt</h4>
+            <span class="text-gray-500">white</span>
+            <div class="rating">
+              <div class="icon text-secondary">
+                <i class="fa-solid fa-star"></i>
+                <span class="text-black font-medium dark:text-white">4.4</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="product-card capitalize rounded-2xl overflow-hidden shadow-xl/20 pb-5"
+        >
+          <img
+            src="./assest/img/women2.jpg"
+            alt="women img Is missing"
+            class="w-full h-[24rem]"
+          />
+          <div class="product-info mt-4 p-3">
+            <h4 class="font-bold text-xl">women western</h4>
+            <span class="text-gray-500">white</span>
+            <div class="rating">
+              <div class="icon text-secondary">
+                <i class="fa-solid fa-star"></i>
+                <span class="text-black font-medium dark:text-white">4.5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="block mx-auto px-6 py-2 bg-secondary rounded-md capitalize font-medium tracking-wider cursor-pointer text-gray-100 transition-colors duration-300 hover:bg-zinc-700"
+      >
+        view all products
+      </button>
+    </section>
+    <!-- End Of Top Rated Section Markup -->
+
+    <!-- Start Of New Arrivals Section Markup -->
+    <section id="new-arrivals" class="py-24">
+      <div class="container mx-auto px-3">
+        <div class="section-header capitalize md:w-2/3 lg:w-1/2">
+          <p class="text-head-text">trending products</p>
+          <h2 class="font-bold text-4xl my-3">top rated products</h2>
+          <p class="text-gray-500">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+            veritatis sunt delectus perferendis debitis quisquam a animi
+            accusantium.
+          </p>
+        </div>
+        <div
+          class="product-container px-3 pt-[16rem] md:pt-[12rem] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 gap-y-[18rem] md:gap-y-[12rem]"
+        >
+          <div
+            class="product-card capitalize p-4 pt-[12rem] sm:pt-[16rem] md:pt-[10rem] lg:pt-[12rem] xl:pt-[12.5rem] rounded-2xl shadow-xl/20 text-center relative transition-all duration-300 group hover:bg-[#333333] dark:bg-[#1f2936]"
+          >
+            <img
+              src="./assest/img/shirt.png"
+              alt="Shirt img Is missing"
+              class="w-2/3 h-auto absolute top-0 left-1/2 -translate-1/2"
+            />
+            <div class="rating">
+              <div class="icon text-secondary">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <h4 class="font-bold text-xl tracking-wider group-hover:text-white">
+              casual shirt
+            </h4>
+            <span class="text-gray-500 group-hover:text-white"
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+              fugiat consectetur amet tempore labore recusandae ea dolores vitae
+              aspernatur minima.
+            </span>
+            <button
+              class="order-btn mt-3 cursor-pointer capitalize font-semibold px-4 py-2 bg-secondary rounded-full text-gray-100 transition-all duration-300 ease-in-out hover:scale-110 group-hover:bg-white group-hover:text-secondary"
+            >
+              order now
+            </button>
+          </div>
+          <div
+            class="product-card capitalize p-4 pt-[12rem] sm:pt-[16rem] md:pt-[10rem] lg:pt-[12rem] xl:pt-[12.5rem] rounded-2xl shadow-xl/20 text-center relative transition-all duration-300 group hover:bg-[#333333] dark:bg-[#1f2936]"
+          >
+            <img
+              src="./assest/img/shirt2.png"
+              alt="Shirt img Is missing"
+              class="w-2/3 h-auto absolute top-0 left-1/2 -translate-1/2"
+            />
+            <div class="rating">
+              <div class="icon text-secondary">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+            </div>
+            <h4 class="font-bold text-xl tracking-wider group-hover:text-white">
+              printed shirt
+            </h4>
+            <span class="text-gray-500 group-hover:text-white"
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+              fugiat consectetur amet tempore labore recusandae ea dolores vitae
+              aspernatur minima.
+            </span>
+            <button
+              class="order-btn mt-3 cursor-pointer capitalize font-semibold px-4 py-2 bg-secondary rounded-full text-gray-100 transition-all duration-300 ease-in-out hover:scale-110 group-hover:bg-white group-hover:text-secondary"
+            >
+              order now
+            </button>
+          </div>
+          <div
+            class="product-card capitalize p-4 pt-[12rem] sm:pt-[16rem] md:pt-[10rem] lg:pt-[12rem] xl:pt-[12.5rem] rounded-2xl shadow-xl/20 text-center relative transition-all duration-300 group hover:bg-[#333333] dark:bg-[#1f2936]"
+          >
+            <img
+              src="./assest/img/shirt3.png"
+              alt="Shirt img Is missing"
+              class="w-2/3 h-auto absolute top-0 left-1/2 -translate-1/2"
+            />
+            <div class="rating">
+              <div class="icon text-secondary">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+            </div>
+            <h4 class="font-bold text-xl tracking-wider group-hover:text-white">
+              women shirt
+            </h4>
+            <span class="text-gray-500 group-hover:text-white"
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+              fugiat consectetur amet tempore labore recusandae ea dolores vitae
+              aspernatur minima.
+            </span>
+            <button
+              class="order-btn mt-3 cursor-pointer capitalize font-semibold px-4 py-2 bg-secondary rounded-full text-gray-100 transition-all duration-300 ease-in-out hover:scale-110 group-hover:bg-white group-hover:text-secondary"
+            >
+              order now
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Of New Arrivals Section Markup -->
+
+    <!-- Start Of Winter Sale Section Markup -->
+    <section id="winter-sale" class="py-24">
+      <div class="container mx-auto px-3 md:px-0 md:flex items-center gap-10">
+        <img
+          src="./assest/img/women2.jpg"
+          alt="Woman Image is Missing"
+          class="shadow-xl/30 rounded-lg w-full h-full md:max-w-1/2 mb-5 md:m-0"
+        />
+        <div class="section-content capitalize">
+          <h2 class="font-bold text-3xl md:text-4xl mb-5">
+            winter sale up to 50% off
+          </h2>
+          <p class="normal-case text-gray-600 mb-5">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, unde
+            facilis sed vitae tenetur fugit maxime totam! Nam magni porro ullam
+            vero sunt accusamus dolorum repellendus accusantium hic. Nisi.
+          </p>
+          <ul>
+            <li class="flex items-center gap-2 mb-3">
+              <span
+                class="size-10 inline-flex items-center justify-center bg-[#ebe9fc] rounded-full dark:bg-[#a78bf4]"
+              >
+                <i class="fa-solid fa-lock fa-lg"></i>
+              </span>
+              <span class="font-medium">quality products</span>
+            </li>
+            <li class="flex items-center gap-2 mb-3">
+              <span
+                class="size-10 inline-flex items-center justify-center bg-[#fdedd9] rounded-full dark:bg-[#f99240]"
+              >
+                <i class="fa-solid fa-truck fa-lg"></i>
+              </span>
+              <span class="font-medium">fast delivry</span>
+            </li>
+            <li class="flex items-center gap-2 mb-3">
+              <span
+                class="size-10 inline-flex items-center justify-center bg-[#dcfbe9] rounded-full dark:bg-[#4edd83]"
+              >
+                <i class="fa-solid fa-credit-card fa-lg"></i>
+              </span>
+              <span class="font-medium">easy payment methods</span>
+            </li>
+            <li class="flex items-center gap-2 mb-3">
+              <span
+                class="size-10 inline-flex items-center justify-center bg-[#fbf9c6] rounded-full dark:bg-[#f8cc16]"
+              >
+                <i class="fa-solid fa-dollar-sign fa-lg"></i>
+              </span>
+              <span class="font-medium">get offers</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- End Of Winter Sale Section Markup -->
+
+    <!-- Start Of Newsletter Section Markup -->
+    <section id="newsletter"
+      class="py-24 bg-[url(./assest/img/orange-pattern.jpg)] bg-no-repeat bg-center bg-cover"
+    >
+      <div class="container mx-auto text-center">
+        <h3 class="text-white capitalize font-bold text-3xl md:text-4xl mb-3">
+          get notified about new products
+        </h3>
+        <form action="">
+          <input
+            type="email"
+            name="mail"
+            placeholder="Enter your email"
+            class="py-2 px-5 w-[18rem] md:w-1/2 border-3 border-[#1a5bb6] focus:outline-none"
+          />
+        </form>
+      </div>
+    </section>
+    <!-- End Of Newsletter Section Markup -->
+
+    <!-- Start Of Testimonial Section Markup -->
+    <section  id="testimonial" class="py-24">
+      <div class="section-header text-center capitalize mb-10">
+        <p class="text-head-text">what our customer say</p>
+        <h2 class="font-bold text-4xl my-3">testimonial</h2>
+        <p class="text-gray-500">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. In veritatis
+          sunt delectus perferendis debitis quisquam a animi accusantium.
+        </p>
+      </div>
+      <div
+        class="container mx-auto px-4 grid gap-5 md:grid-cols-2 lg:grid-cols-3"
+      >
+        <div class="customer-opinion bg-[#fef6e8] dark:bg-[#1f2936] p-5 rounded-2xl relative">
+          <img
+            src="./assest/img/avatar1.jpg"
+            alt="Avatar Image Is Missing"
+            class="size-20 rounded-full"
+          />
+          <p class="text-gray-500 py-10">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam
+            dolores, accusamus odio quae quaerat beatae rem est voluptatibus
+            omnis quo sit temporibus amet.
+          </p>
+          <h4 class="font-bold text-xl capitalize">john doe</h4>
+          <span class="absolute top-1/4 right-2">
+            <i
+              class="fa-solid fa-quote-right text-[6rem] opacity-25 text-stone-500"
+            ></i>
+          </span>
+        </div>
+        <div class="customer-opinion bg-[#fef6e8] dark:bg-[#1f2936]  p-5 rounded-2xl relative">
+          <img
+            src="./assest/img/avatar2.jpg"
+            alt="Avatar Image Is Missing"
+            class="size-20 rounded-full"
+          />
+          <p class="text-gray-500 py-10">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam
+            dolores, accusamus odio quae quaerat beatae rem est voluptatibus
+            omnis quo sit temporibus amet.
+          </p>
+          <h4 class="font-bold text-xl capitalize">jane smith</h4>
+          <span class="absolute top-1/4 right-2">
+            <i
+              class="fa-solid fa-quote-right text-[6rem] opacity-25 text-stone-500"
+            ></i>
+          </span>
+        </div>
+        <div class="customer-opinion bg-[#fef6e8] dark:bg-[#1f2936] p-5 rounded-2xl relative">
+          <img
+            src="./assest/img/avatar1.jpg"
+            alt="Avatar Image Is Missing"
+            class="size-20 rounded-full"
+          />
+          <p class="text-gray-500 py-10">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam
+            dolores, accusamus odio quae quaerat beatae rem est voluptatibus
+            omnis quo sit temporibus amet.
+          </p>
+          <h4 class="font-bold text-xl capitalize">peter pan</h4>
+          <span class="absolute top-1/4 right-2">
+            <i
+              class="fa-solid fa-quote-right text-[6rem] opacity-25 text-stone-500"
+            ></i>
+          </span>
+        </div>
+      </div>
+    </section>
+    <!-- End Of Testimonial Section Markup -->
+
+    <!-- Start Of Footer Markup -->
+    <footer
+      class="py-24 bg-[url(./assest/img/footer-pattern.jpg)] bg-no-repeat bg-bottom bg-cover relative"
+    >
+      <div
+        class="container mx-auto px-4 grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+      >
+        <div class="logo">
+          <div class="flex items-center gap-2">
+            <a href="./index.html"
+              ><img src="./assest/img/logo.png" alt="Logo" class="size-8"
+            /></a>
+            <a href="./index.html" class="text-3xl font-bold text-white"
+              >Shopsy</a
+            >
+          </div>
+          <p class="text-gray-200 py-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+            dolor, placeat dolorem dolores quia ullam vitae ratione, repudiandae
+            asperiores quos ipsam libero sunt inventore ad reiciendis, fugiat a
+            incidunt dignissimos?
+          </p>
+        </div>
+        <div class="links text-white capitalize">
+          <h3 class="font-semibold">important links</h3>
+          <ul class="py-3">
+            <li class="mb-2">
+              <a
+                href="#"
+                class="transition-all duration-300 ease-in-out hover:text-secondary hover:ms-2"
+                >home</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                href="#"
+                class="transition-all duration-300 ease-in-out hover:text-secondary hover:ms-2"
+                >about</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                href="#"
+                class="transition-all duration-300 ease-in-out hover:text-secondary hover:ms-2"
+                >contact</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                href="#"
+                class="transition-all duration-300 ease-in-out hover:text-secondary hover:ms-2"
+                >blog</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="links text-white capitalize">
+          <h3 class="font-semibold">links</h3>
+          <ul class="py-3">
+            <li class="mb-2">
+              <a
+                href="#"
+                class="transition-all duration-300 ease-in-out hover:text-secondary hover:ms-2"
+                >home</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                href="#"
+                class="transition-all duration-300 ease-in-out hover:text-secondary hover:ms-2"
+                >about</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                href="#"
+                class="transition-all duration-300 ease-in-out hover:text-secondary hover:ms-2"
+                >contact</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                href="#"
+                class="transition-all duration-300 ease-in-out hover:text-secondary hover:ms-2"
+                >blog</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="social text-white text-3xl">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+          <div class="address my-5 text-white">
+            <i class="fa-solid fa-location-arrow me-2"></i>
+            Jujutsu Kaisen, Tokyo, Japan
+          </div>
+          <div class="phone my-5 text-white">
+            <i class="fa-solid fa-phone me-2"></i>
+            +91 1234567890
+          </div>
+          <div class="email my-5 text-white">
+            <i class="fa-solid fa-envelope me-2"></i>
+            jujutsukaisenschool@gmail.com
+          </div>
+        </div>
+      </div>
+      <p
+        class="text-center text-stone-700 capitalize absolute bottom-0 left-1/2 -translate-x-1/2"
+      >
+        &copy; 2026 All rights reserved by AbdallahMoMen
+      </p>
+    </footer>
+    <!-- End Of Footer Markup -->
   </body>
-</html>
+</html
