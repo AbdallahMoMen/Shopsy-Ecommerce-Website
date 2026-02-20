@@ -21,13 +21,13 @@
 
 ## 📸 Preview
 
-![App Screenshot](https://github.com/AbdallahMoMen/Shopsy-Ecommerce-Website/blob/main/light-preview.png)
-
 **☀️ Light Mode**
 
-![App Screenshot](https://github.com/AbdallahMoMen/Shopsy-Ecommerce-Website/blob/main/dark-preview.png)
+![App Screenshot](https://github.com/AbdallahMoMen/Shopsy-Ecommerce-Website/blob/main/light-preview.png)
 
 **🌙 Dark Mode**
+
+![App Screenshot](https://github.com/AbdallahMoMen/Shopsy-Ecommerce-Website/blob/main/dark-preview.png)
 
 ---
 
